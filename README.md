@@ -1,4 +1,40 @@
-# React + TypeScript + Vite
+# Learning React Testing with Vitest
+
+## Setup
+
+Required packages
+
+```bash
+npm create vite@lastest
+# React -> TypeScript + SWC
+npm i vitest happy-dom @testing-library/react @testing-library/user-event -D
+# (optional) Added vitest ui for a web interface of each test env.
+npm i -D @vitest/ui
+```
+
+Files modified:
+
+It depends on documentaions.
+
+```json
+//package.json -> script test added.
+"test": "vitest"
+```
+
+```ts
+// vite.config.ts Add this line to the beggining of the file
+/// <reference types="vitest" />
+// then, after plugins, add a comma.
+test: {
+   environment: 'happy-dom',
+},
+```
+
+thats all by the moment of this learning path.
+
+---
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

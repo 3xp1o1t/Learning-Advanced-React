@@ -1,12 +1,10 @@
+import Header from './components/Header';
+
 function App() {
   return (
-    <>
-      <div className="flex flex-col bg-sky-200 text-center">
-        <h1 className="font-extrabold text-emerald-800 text-xl">
-          Learning React Testing
-        </h1>
-      </div>
-    </>
+    <div className="flex flex-col mx-auto">
+      <Header title="LRT" />
+    </div>
   );
 }
 

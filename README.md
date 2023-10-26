@@ -32,6 +32,10 @@ test: {
 
 thats all by the moment of this learning path.
 
+Tips/Tricks
+
+- html-aria list: <https://www.w3.org/TR/html-aria/#docconformance>
+
 ---
 
 ## React + TypeScript + Vite

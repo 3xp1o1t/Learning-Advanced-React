@@ -30,6 +30,22 @@ test: {
 },
 ```
 
+If running storybook with tailwind.
+
+- After installing and setting up tailwindcss
+- Install storybook following the documentation
+- Import tailwindcss into preview.ts
+
+```ts
+// .storybook/preview.ts
+...
+import 'tailwindcss/tailwind.css';
+```
+
+Now all tailwind classes will be availables inside stories.
+
+---
+
 thats all by the moment of this learning path.
 
 Tips/Tricks

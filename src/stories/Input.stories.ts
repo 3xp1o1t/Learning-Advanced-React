@@ -10,15 +10,12 @@ const meta: Meta<typeof Input> = {
   },
   argTypes: {
     size: {
-      control: { type: 'inline-radio' },
-    },
-    backgroundColor: { control: { type: 'inline-radio' } },
-    variantOpacity: {
-      options: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900],
+      options: ['default', 'medium', 'large'],
       control: 'select',
     },
-    radius: {
-      control: { type: 'range', min: 0, max: 20, step: 2 },
+    variant: {
+      options: ['default', 'bold'],
+      control: { type: 'inline-radio' },
     },
   },
 } satisfies Meta<typeof Input>;
@@ -29,11 +26,14 @@ type Story = StoryObj<typeof Input>;
 
 export const Primary: Story = {
   args: {
-    size: 'small',
-    backgroundColor: 'emerald',
-    variantOpacity: 500,
-    radius: 8,
-    placeholder: 'Primary input',
-    enable: false,
+    variant: 'default',
+    value: '',
+  },
+};
+export const Disabled: Story = {
+  args: {
+    variant: 'disabled',
+    readOnly: true,
+    placeholder: 'Readonly',
   },
 };

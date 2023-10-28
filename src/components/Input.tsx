@@ -1,44 +1,44 @@
-interface InputProps {
-  size: 'small' | 'medium' | 'large';
-  placeholder: string;
-  backgroundColor: 'emerald' | 'sky' | 'rose';
-  enable: boolean;
-  variantOpacity: number;
-  radius: number;
-  onChangeText?: () => void;
-}
+import { VariantProps, cva } from 'class-variance-authority';
+import { ComponentProps } from 'react';
+import { twMerge } from 'tailwind-merge';
 
-const Input = ({
-  size,
-  placeholder,
-  backgroundColor,
-  variantOpacity,
-  radius,
-  enable,
-  onChangeText,
-}: InputProps) => {
-  const setSize = (size: string) => {
-    switch (size) {
-      case 'small':
-        return 'px-2 py-1';
-      case 'medium':
-        return 'px-6 py-1';
-      case 'large':
-        return 'px-12 py-1';
-      default:
-        return 'px-2 py-1';
-    }
-  };
+const inputStyles = cva(['transition-colors'], {
+  variants: {
+    variant: {
+      default: [
+        'bg-sky-100',
+        'font-extralight',
+        'rounded-md',
+        'text-secondary',
+      ],
+      disabled: [
+        'bg-sky-50',
+        'font-extralight',
+        'rounded-md',
+        'text-rose-500',
+        'border-2',
+        'hover:cursor-not-allowed',
+      ],
+      bold: ['font-bold', 'bg-sky-100', 'text-sky-900', 'rounded-md'],
+    },
+    size: {
+      default: ['w-1/3', 'px-1', 'py-2'],
+      medium: ['w-1/2', 'px-1', 'py-2'],
+      large: ['w-full', 'px-1', 'py-2'],
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+    size: 'default',
+  },
+});
 
+type InputProps = VariantProps<typeof inputStyles> & ComponentProps<'input'>;
+const Input = ({ variant, size, className, ...props }: InputProps) => {
   return (
     <input
-      type="text"
-      placeholder={placeholder}
-      className={`bg-${backgroundColor}-${variantOpacity} rounded-[${radius}px] ${setSize(
-        size,
-      )}`}
-      readOnly={enable}
-      onChange={onChangeText}
+      {...props}
+      className={twMerge(inputStyles({ variant, size }), className)}
     />
   );
 };

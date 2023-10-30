@@ -1,4 +1,17 @@
-# Learning Advanced React Stuff
+![Header](public/github-header-image.png)
+[Header Made with leviarista tool](https://leviarista.github.io/github-profile-header-generator/)
+
+---
+
+Table of contents
+
+- [Setup for testing](#setup-for-testing)
+- [Setup for Storybook with TailwindCSS and TypeScript](#setup-for-storybook-with-tailwindcss-and-typescript)
+- [Currying and composition](#currying-and-composition)
+- [Custom hooks with test](#custom-hooks-with-test)
+  - [useArray](#usearray)
+
+---
 
 ## Setup for testing
 
@@ -32,9 +45,12 @@ test: {
 
 ## Setup for Storybook with TailwindCSS and TypeScript
 
-- After installing and setting up tailwindcss
-- Install storybook following the documentation
-- Import tailwindcss into preview.ts
+- Packages for this step:
+  - class-variance-authority
+  - tailwind-merge
+- Install and setup TailwindCSS following docs
+- Install StoryBook following the docs
+- Import tailwindcss.css file into preview.ts
 
 ```ts
 // .storybook/preview.ts
@@ -42,7 +58,7 @@ test: {
 import 'tailwindcss/tailwind.css';
 ```
 
-Now all tailwind classes will be available inside stories.
+`Now all tailwind classes will be available inside stories.`
 
 ---
 
@@ -56,7 +72,7 @@ i just convert to TypeScript and add some test for better understanding.
 
 ## Custom hooks with test
 
-- Descriptions/examples provided by [Leschev](https://habr.com/en/users/Leschev/), i just add generic support and testing.
+Descriptions/examples provided by [Leschev](https://habr.com/en/users/Leschev/), i just add generic support and testing
 
 ### useArray
 
@@ -73,31 +89,3 @@ Tips/Tricks
 - html-aria list: <https://www.w3.org/TR/html-aria/#docconformance>
 
 ---
-
-## React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list

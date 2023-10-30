@@ -1,11 +1,11 @@
-# Learning React Testing with Vitest
+# Learning Advanced React Stuff
 
-## Setup
+## Setup for testing
 
 Required packages
 
 ```bash
-npm create vite@lastest
+npm create vite@latest
 # React -> TypeScript + SWC
 npm i vitest happy-dom @testing-library/react @testing-library/user-event -D
 # (optional) Added vitest ui for a web interface of each test env.
@@ -14,7 +14,7 @@ npm i -D @vitest/ui
 
 Files modified:
 
-It depends on documentaions.
+It depends on documentation.
 
 ```json
 //package.json -> script test added.
@@ -22,7 +22,7 @@ It depends on documentaions.
 ```
 
 ```ts
-// vite.config.ts Add this line to the beggining of the file
+// vite.config.ts Add this line to the beginning of the file
 /// <reference types="vitest" />
 // then, after plugins, add a comma.
 test: {
@@ -30,7 +30,7 @@ test: {
 },
 ```
 
-If running storybook with tailwind.
+## Setup for Storybook with TailwindCSS and TypeScript
 
 - After installing and setting up tailwindcss
 - Install storybook following the documentation
@@ -42,9 +42,17 @@ If running storybook with tailwind.
 import 'tailwindcss/tailwind.css';
 ```
 
-Now all tailwind classes will be availables inside stories.
+Now all tailwind classes will be available inside stories.
 
 ---
+
+## Currying and composition
+
+Added an example inside util folder with test of and advance use
+of curried functions with function composition using de example of [Yuri Bett](https://blog.stackademic.com/spice-up-your-javascript-with-currying-894a7c463d03),
+i just convert to TypeScript and add some test for better understanding.
+
+[currying example](/src/util/currying.ts) | [currying test](/src/tests/util/currying.test.ts)
 
 ## Custom hooks with test
 
@@ -54,9 +62,11 @@ Now all tailwind classes will be availables inside stories.
 
 The advantages of using this custom hook are twofold: it simplifies the management of array states and provides a cleaner and more readable code structure.
 
+[useArray](/src/hooks/useArray.ts) | [test](/src/tests/hooks/useArray.test.tsx)
+
 ---
 
-thats all by the moment of this learning path.
+Thats all by the moment of this learning path.
 
 Tips/Tricks
 

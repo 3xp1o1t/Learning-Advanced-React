@@ -10,6 +10,7 @@ Table of contents
 - [Currying and composition](#currying-and-composition)
 - [Custom hooks with test](#custom-hooks-with-test)
   - [useArray](#usearray)
+  - [useAsync](#useasync)
 
 ---
 
@@ -80,7 +81,11 @@ The advantages of using this custom hook are twofold: it simplifies the manageme
 
 [useArray](/src/hooks/useArray.ts) | [test](/src/tests/hooks/useArray.test.tsx)
 
----
+### useAsync
+
+The useAsync hook takes in a callback function that performs the asynchronous operation and an optional array of dependencies. It returns an object with three properties: loading, error, and value.
+
+[useAsync](/src/hooks/useAsync.ts) | [test](/src/tests/hooks/useAsync.test.tsx)
 
 Thats all by the moment of this learning path.
 

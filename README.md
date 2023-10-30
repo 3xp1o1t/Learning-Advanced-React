@@ -46,6 +46,16 @@ Now all tailwind classes will be availables inside stories.
 
 ---
 
+## Custom hooks with test
+
+- Descriptions/examples provided by [Leschev](https://habr.com/en/users/Leschev/), i just add generic support and testing.
+
+### useArray
+
+The advantages of using this custom hook are twofold: it simplifies the management of array states and provides a cleaner and more readable code structure.
+
+---
+
 thats all by the moment of this learning path.
 
 Tips/Tricks

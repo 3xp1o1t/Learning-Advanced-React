@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import useEventListener from '../hooks/useEventListener';
 import Input from './Input';
 
 interface HeroProps {
@@ -5,6 +7,13 @@ interface HeroProps {
 }
 
 const Hero = ({ title }: HeroProps) => {
+  const [key, setKey] = useState('');
+  const handleKeydown = (e: KeyboardEvent) => {
+    setKey(e.key);
+  };
+
+  useEventListener('keydown', handleKeydown, document.body);
+
   return (
     <main className="relative overflow-hidden mx-auto max-w-[1440px] px-6 py-10 pb-32 ">
       <h1 className="font-extrabold text-sky-100 text-7xl pb-3">{title}</h1>
@@ -31,6 +40,11 @@ const Hero = ({ title }: HeroProps) => {
             The perico thing
           </blockquote>
         </section>
+      </div>
+      <div>
+        <blockquote>
+          <span>Key: {key}</span>
+        </blockquote>
       </div>
     </main>
   );
